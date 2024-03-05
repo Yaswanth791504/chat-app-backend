@@ -15,7 +15,8 @@
     "socket.io": "^4.7.4"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "build": "node server.js"
   },
   "name": "backend",
   "version": "1.0.0",
