@@ -175,18 +175,15 @@ const getUserProfile = async (req, res) => {
 
 const updateUserProfileImage = async (req, res) => {
   try {
-    await new Promise((resolve, reject) => {
-      cloudinary.uploader.upload(
-        req.file.path,
-        { public_id: req.file.filename },
-        function (error, result) {
-          if (error) {
-            reject(error);
-          }
-          resolve(result);
-        }
-      );
-    });
+    console.log("upload");
+    cloudinary.uploader.upload(
+      req.file.path,
+      { public_id: req.file.filename },
+      function (error, result) {
+        console.log(result);
+      }
+    );
+
     const profileImage = `https://res.cloudinary.com/drv13gs45/image/upload/c_thumb,g_face,h_500,w_500/${req.file.filename}.jpg`;
     const { _id: id } = req.user;
     const updated = await User.findByIdAndUpdate(
@@ -214,6 +211,7 @@ const updateUserProfileImage = async (req, res) => {
 
 const updateBackgroundImage = async (req, res) => {
   try {
+    console.log("Here");
     cloudinary.uploader.upload(
       req.file.path,
       { public_id: req.file.filename },

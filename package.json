@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "build": "node server.js"
+    "build": "node install"
   },
   "name": "backend",
   "version": "1.0.0",

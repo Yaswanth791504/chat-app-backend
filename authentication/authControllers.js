@@ -101,6 +101,7 @@ const loginUser = async (req, res, next) => {
 };
 
 const authorizeUser = async (req, res, next) => {
+  console.log("Here");
   try {
     if (
       !req.headers.authorization ||
