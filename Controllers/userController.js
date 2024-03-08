@@ -229,6 +229,7 @@ const updateBackgroundImage = async (req, res) => {
         }
       );
     });
+    console.log(result);
     const user = await User.findByIdAndUpdate(
       req.user._id,
       {

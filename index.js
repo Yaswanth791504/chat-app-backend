@@ -19,7 +19,7 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://frontend-mauve-kappa.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
