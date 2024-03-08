@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
     "cloudinary": "^2.0.2",
     "cookie-parser": "^1.4.6",
     "cores": "^0.8.5",
@@ -16,7 +17,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "build": "node install"
+    "build": "npm install"
   },
   "name": "backend",
   "version": "1.0.0",

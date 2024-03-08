@@ -111,7 +111,10 @@ const authorizeUser = async (req, res, next) => {
       throw new Error("Unauthorized access");
     }
     const token = req.headers.authorization.split(" ")[1];
+    console.log(token);
+    console.log(process.env.SECRET);
     const verified = await jwt.verify(token, process.env.SECRET);
+    console.log(verified);
     const authUser = await User.findById(verified.id);
     if (!User) {
       throw new Error("User does not exist");

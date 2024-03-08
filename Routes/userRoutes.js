@@ -22,6 +22,7 @@ router
     upload.single("profileImage"),
     userController.updateUserProfileImage
   );
+
 router
   .route("/updateBackgroundImage")
   .put(
@@ -30,14 +31,7 @@ router
     userController.updateBackgroundImage
   );
 
-router
-  .route("/")
-  .get(authorize.authorizeUser, userController.getUserProfile)
-  .put(
-    authorize.authorizeUser,
-    upload.single("profileImage"),
-    userController.updateUserProfile
-  );
+router.route("/").get(authorize.authorizeUser, userController.getUserProfile);
 router.route("/search").post(authorize.authorizeUser, userController.getUsers);
 
 router
