@@ -103,7 +103,11 @@ const loginUser = async (req, res, next) => {
 const authorizeUser = async (req, res, next) => {
   console.log("Here");
   try {
-    if (!req.headers.authorization) {
+    if (
+      !req.headers.authorization ||
+      req.headers.authorization === "" ||
+      req.headers.authorization === null
+    ) {
       throw new Error("Unauthorized access");
     }
     const token = req.headers.authorization.split(" ")[1];
