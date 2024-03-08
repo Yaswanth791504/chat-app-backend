@@ -219,7 +219,7 @@ const updateUserProfileImage = async (req, res) => {
 const updateBackgroundImage = async (req, res) => {
   try {
     console.log("Here");
-    const result = new Promise((resolve, reject) => {
+    const result = await new Promise((resolve, reject) => {
       cloudinary.uploader.upload(
         req.file.path,
         { public_id: req.file.filename },
